@@ -4,8 +4,8 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { NoteRegister } from 'src/app/models/note-register';
 import { NoteUpdate } from 'src/app/models/note-update';
 
-const URL = "http://localhost:8083/notes"
-
+//const URL = "http://localhost:8083/notes"
+const URL = "https://note-app-production.up.railway.app/notes";
 @Injectable({
   providedIn: 'root'
 })

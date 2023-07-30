@@ -10,9 +10,9 @@ import { RegisterData } from 'src/app/models/register-data.model';
 })
 export class AuthService {
 
-  uri = "http://localhost:8083"
+  //uri = "http://localhost:8083"
   //Produccion:
-  //uri = "https://portfolio-backend-production-f664.up.railway.app";
+  uri = "https://note-app-production.up.railway.app";
   token = "";
 
   constructor(private http: HttpClient, private router: Router) { }

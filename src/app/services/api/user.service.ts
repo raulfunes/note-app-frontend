@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 
-const URL = "http://localhost:8083/user"
-
+//const URL = "http://localhost:8083/user"
+const URL = "https://note-app-production.up.railway.app/user";
 @Injectable({
   providedIn: 'root'
 })

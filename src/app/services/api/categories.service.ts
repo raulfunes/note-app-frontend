@@ -5,8 +5,8 @@ import { CategoryRegister } from 'src/app/models/category-register';
 import { CategoryUpdate } from 'src/app/models/category-update';
 
 
-const URL = "http://localhost:8083/categories";
-
+//const URL = "http://localhost:8083/categories";
+const URL = "https://note-app-production.up.railway.app/categories";
 @Injectable({
   providedIn: 'root'
 })
