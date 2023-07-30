@@ -1,0 +1,50 @@
+.custom-form {
+    min-width: 400px;
+    max-width: 60%;
+    margin: 0px auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem 3rem;
+    margin: auto;
+    border-radius: 2.5rem;
+    background-color: #3E3E3E;
+    color: white;
+    margin-top: 10rem;
+    box-shadow: -1px 1px 59px -2px rgba(62, 62, 62, 0.69);
+    -webkit-box-shadow: -1px 1px 59px -2px rgba(62, 62, 62, 0.69);
+    -moz-box-shadow: -1px 1px 59px -2px rgba(62, 62, 62, 0.69);
+}
+
+.custom-form>h2 {
+    font-size: 2rem;
+}
+
+.custom-form input {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    margin-left: -1rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border: none;
+    background: #ebf5fc;
+    color: #3E3E3E;
+}
+
+.custom-form button {
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    border: none;
+    font-size: 0.875rem;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #161B36;
+    width: 300px;
+    display: block;
+    font-size: 1.3rem;
+    padding: 0.875rem 1rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}

@@ -1,0 +1,17 @@
+<div class="login-container">
+    <div class="login-banner">
+        <div class="login-darken"></div>
+    </div>
+    <header class="login-header">
+        <h1>Take control of <span>YOUR NOTES</span></h1>
+        <p>Organize your thoughts and ideas with ease</p>
+        <a (click)="scroll(forms)">Start now!</a>
+    </header>
+    <section #forms id="forms">
+        <h2>Login or register to start creating your notes</h2>
+        <div class="forms-container">
+            <app-login></app-login>
+            <app-register></app-register>
+        </div>
+    </section>
+</div>

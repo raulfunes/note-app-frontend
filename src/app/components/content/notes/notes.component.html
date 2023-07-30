@@ -1,0 +1,34 @@
+<div class="note-container">
+    <div class="note-display">
+        <h1>My Notes</h1>
+        <div class="note-filter">
+            <select #selectList [(ngModel)]="myFilter" (ngModelChange)="filterNotes($event)">
+                <option value="-1">All notes</option>
+                <option *ngFor="let category of categories; let i = index" value="{{i}}">
+                    {{category.name}}
+                </option>
+            </select>
+        </div>
+        <button class="note-add-button" ngClass="sidebar? " (click)="openNoteForm()">Add note</button>
+        <button class="toogler" (click)="toogleSidebar()">
+            <i class="bi bi-list"></i>
+        </button>
+        <section class="note-list">
+            <div class="note" *ngFor="let note of showedNotes">
+                <p class="note-update">Last updated: {{note.update_date}}</p>
+                <h2 class="note-title">{{note.title}}</h2>
+                <p class="note-category">Category: {{note.category}}</p>
+                <p class="note-content">{{note.content}}</p>
+                <div class="note-options">
+                    <i (click)="archiveNote(note.id)" class="bi bi-archive-fill"></i>
+                    <i (click)="openUpdateForm(note)" class="bi bi-pencil-fill"></i>
+                </div>
+            </div>
+        </section>
+        <div (click)="toogleSidebar()" [class]="sidebar? 'sidebar-bg': ''"></div>
+    </div>
+
+    <div [class]="sidebar? 'toogle sidebar': 'sidebar'">
+        <app-sidebar (emitCategoriesChange)="fetchNotes()" [categories]="categories"></app-sidebar>
+    </div>
+</div>

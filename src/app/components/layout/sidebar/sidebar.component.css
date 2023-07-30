@@ -1,0 +1,124 @@
+.sidebar {
+    background-color: var(--background);
+    height: 100vh;
+    max-width: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.sidebar header{
+    display: grid;
+    padding-top: 4rem;
+    grid-template-columns: 1fr 2fr;
+    justify-content: start;
+    align-items: center;
+}
+
+.header-icon > div{
+    margin: 1rem 1rem 1rem 2rem;
+    width: 60px;
+    height: 60px;
+    background-color: #3E3E3E;
+    border-radius: 50%;
+}
+
+.header-user h3{
+    font-size: 2.4rem;
+}
+
+.header-user a{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.header-user a:hover{
+    text-decoration: underline solid 1px white;
+}
+
+
+.note-status-option{
+    margin-top: 100px;
+    border-bottom: 1px solid #B0B0B0;
+    padding-bottom: 40px;
+    font-size: 2rem;
+}
+
+.note-status-option div{
+    margin-bottom: 1rem;
+}
+
+.note-status-option div:hover a{
+    text-decoration: underline solid 1px white;
+}
+
+.note-status-option i{
+    margin-left: 3rem;
+    margin-right: 1rem;
+}
+
+.note-status-option a{
+    text-decoration: none;
+}
+
+
+.note-category-header {
+    margin-top: 40px;
+    padding-bottom: 40px;
+    
+}
+.note-category-header i{
+    font-size: 2rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    transition: all .3s ease-in-out;
+}
+.note-category-header i:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.note-category-header p{
+    font-size: 2rem;
+    display: inline-block;
+}
+
+.category-option{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
+
+    background-color: #2A2A2A;
+    border-bottom: 5px solid #161B36;
+    
+    border-end-end-radius: 5px;
+    border-end-start-radius: 5px;
+    padding: 1rem;
+
+    font-size: 1.8rem;
+
+    transition: all .3s ease-in-out;
+
+    user-select: none;
+
+    margin-bottom: 1rem;
+}
+.category-option:hover{
+    background-color: #313131;
+    border-bottom: 5px solid #161B46;
+}
+.category-options-icons{
+    justify-self: end;
+    display: flex;
+}
+.category-options-icons i{
+    margin: 0 .5rem;
+    transition: all .3s ease-in-out;
+}
+.category-options-icons i:hover{
+    user-select: all;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+@media screen and (min-width:992px) {
+    .sidebar{
+        width: 300px;
+    }
+}

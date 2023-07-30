@@ -1,0 +1,40 @@
+<div class="register">
+    <form class="custom-form" [formGroup]="register" (ngSubmit)="submit()">
+        <h2>Register</h2>
+        <div>
+            <input type="text" name="name" formControlName="name" placeholder="Name">
+            <div class="error" *ngIf="this.register.get('name').touched && this.register.get('name').invalid">
+                <p *ngIf="this.register.get('name')?.errors?.['required']">* Name is required</p>
+                <p *ngIf="this.register.get('name')?.errors?.['minlength']">* Name is too short</p>
+                <p *ngIf="this.register.get('name')?.errors?.['maxlength']">* Name is too large</p>
+            </div>
+        </div>
+        <div>
+            <input type="email" name="email" formControlName="email" placeholder="Email">
+            <div class="error" *ngIf="this.register.get('email').touched && this.register.get('email').invalid">
+                <p *ngIf="this.register.get('email')?.errors?.['required']">* Username is required</p>
+                <p *ngIf="this.register.get('email')?.errors?.['email']">* Not correct email format</p>
+            </div>
+        </div>
+        <div>
+            <input type="text" name="username" formControlName="username" placeholder="Username">
+            <div class="error" *ngIf="this.register.get('username').touched && this.register.get('username').invalid">
+                <p *ngIf="this.register.get('username')?.errors?.['required']">* Username is required</p>
+                <p *ngIf="this.register.get('username')?.errors?.['minlength']">* Username is too short</p>
+                <p *ngIf="this.register.get('username')?.errors?.['maxlength']">* Username is too large</p>
+            </div>
+        </div>
+        <div>
+            <input type="password" name="password" formControlName="password" placeholder="Password">
+            <div class="error" *ngIf="this.register.get('password').touched && this.register.get('password').invalid">
+                <p *ngIf="this.register.get('password')?.errors?.['required']">* Password is required</p>
+                <p *ngIf="this.register.get('password')?.errors?.['minlength']">* Password is too short</p>
+                <p *ngIf="this.register.get('password')?.errors?.['maxlength']">* Password is too large</p>
+            </div>
+        </div>
+        <button type="submit">Register</button>
+        <div *ngIf="badCredentials" class="error">
+            <p>Username or email taken</p>
+        </div>
+    </form>
+</div>

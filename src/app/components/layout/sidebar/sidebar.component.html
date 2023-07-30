@@ -1,0 +1,51 @@
+<div class="sidebar">
+    <header>
+        <div class="header-icon">
+            <div></div>
+        </div>
+        <div class="header-user">
+            <h3>{{username}}</h3>
+            <a (click)="logout()">Log out</a>
+        </div>
+    </header>
+
+    <section>
+        <div class="note-status-option">
+            <div>
+                <i class="bi bi-journal"></i>
+                <a routerLink="/notes">Notes</a>
+            </div>
+            <div>
+                <i class="bi bi-archive-fill"></i>
+                <a routerLink="/archivednotes">Archived notes</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories-menu">
+        <div class="note-category-header">
+            <i class="bi bi-plus-circle-fill" (click)="activateAddCategory()"></i>
+            <p>Categories</p>
+        </div>
+        <div>
+            <div *ngIf="addCategory">
+                <app-categoria-form (closeForm)="manageFormResponse($event)"></app-categoria-form>
+            </div>
+            <div *ngFor="let category of categories">
+                <div *ngIf="this.categoryUpdate.id != category.id" class="category-option">
+                    <div>
+                        <p>{{category.name}}</p>
+                    </div>
+                    <div class="category-options-icons">
+                        <i (click)="activateUpdateCategory(category)" class="bi bi-pencil-fill"></i>
+                        <i (click)="deleteCategory(category.id)" class="bi bi-trash-fill"></i>
+                    </div>
+                </div>
+                <div *ngIf="this.categoryUpdate.id == category.id">
+                    <app-categoria-form [categoryUpdate]="categoryUpdate"
+                        (closeForm)="manageFormResponse($event)"></app-categoria-form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

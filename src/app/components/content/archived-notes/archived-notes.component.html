@@ -1,0 +1,25 @@
+<div class="note-container">
+    <div class="note-display">
+        <h1>My Archived Notes</h1>
+        <a class="note-add-button" routerLink="/notes">Go back to notes</a>
+        <button class="toogler" (click)="toogleSidebar()">
+            <i class="bi bi-list"></i>
+        </button>
+        <section class="note-list">
+            <div class="note" *ngFor="let note of notes">
+                <p class="note-update">Last updated: {{note.update_date}}</p>
+                <h2 class="note-title">{{note.title}}</h2>
+                <p class="note-category">{{note.category}}</p>
+                <p class="note-content">{{note.content}}</p>
+                <div class="note-options">
+                    <i (click)="dearchiveNote(note.id)" class="bi bi-folder2-open"></i>
+                    <i (click)="deleteNote(note.id)" class="bi bi-trash-fill"></i>
+                </div>
+            </div>
+        </section>
+        <div (click)="toogleSidebar()" [class]="sidebar? 'sidebar-bg': ''"></div>
+    </div>
+    <div [class]="sidebar? 'toogle sidebar': 'sidebar'">
+        <app-sidebar (emitCategoriesChange)="fetchNotes()" [categories]="categories"></app-sidebar>
+    </div>
+</div>

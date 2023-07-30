@@ -1,0 +1,14 @@
+<form class="custom-form" [formGroup]="category" (ngSubmit)="submit()">
+    <div class="category-form">
+        <input type="text" name="name" formControlName="name" placeholder="Category Name">
+        <button *ngIf="!makingQuery" type="submit"><i class="bi bi-check-lg"></i></button>
+        <button *ngIf="!makingQuery" (click)="cancel()"><i class="bi bi-x"></i></button>
+        <div *ngIf="makingQuery" id="loading"></div>
+    </div>
+    <div class="error" *ngIf="this.category.get('name').touched && this.category.get('name').invalid">
+        <p *ngIf="this.category.get('name')?.errors?.['required']">* Category can't be empty</p>
+    </div>
+    <div *ngIf="badCredentials" class="error">
+        <p>User credentials are incorrect</p>
+    </div>
+</form>

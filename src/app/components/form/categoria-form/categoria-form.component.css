@@ -1,0 +1,27 @@
+.custom-form{
+    padding: 1rem;
+    background-color: #2A2A2A;
+    border-bottom: 5px solid #161B36;
+    margin-bottom: 1rem;
+}
+
+.category-form{
+    display: flex;
+    gap: 1rem;
+}
+
+.category-form input{
+    width: 100%;
+    font-size: 1.8rem;
+    color: black;
+}
+.category-form button{
+    background-color: transparent;
+    font-size: 1.8rem;
+    border: none;
+    transition: all .3s ease;
+}
+.category-form button:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}

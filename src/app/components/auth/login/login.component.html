@@ -1,0 +1,25 @@
+<div class="login">
+    <form class="custom-form" [formGroup]="login" (ngSubmit)="submit()">
+        <h2>Login</h2>
+        <div>
+            <input type="text" name="username" formControlName="username" placeholder="Username">
+            <div class="error" *ngIf="this.login.get('username').touched && this.login.get('username').invalid">
+                <p *ngIf="this.login.get('username')?.errors?.['required']">* Username is required</p>
+                <p *ngIf="this.login.get('username')?.errors?.['minlength']">* Username is too short</p>
+                <p *ngIf="this.login.get('username')?.errors?.['maxlength']">* Username is too large</p>
+            </div>
+        </div>
+        <div>
+            <input type="password" name="password" formControlName="password" placeholder="Password">
+            <div class="error" *ngIf="this.login.get('password').touched && this.login.get('password').invalid">
+                <p *ngIf="this.login.get('password')?.errors?.['required']">* Password is required</p>
+                <p *ngIf="this.login.get('password')?.errors?.['minlength']">* Password is too short</p>
+                <p *ngIf="this.login.get('password')?.errors?.['maxlength']">* Password is too large</p>
+            </div>
+        </div>
+        <button type="submit">Log in</button>
+        <div *ngIf="badCredentials" class="error">
+            <p>User credentials are incorrect</p>
+        </div>
+    </form>
+</div>
